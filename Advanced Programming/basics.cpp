@@ -11,6 +11,20 @@
 
 using namespace std;
 
+void prototype_function()
+{
+    // functionType functionName(parameter list);
+    // write a function prototype for each function your will write because your
+    // main function will need to have variable declared before it runs
+}
+
+void proto_function(int num); //prototype function to prevent errors in main()
+
+
+//main function is the entrypoint of the c++ program
+int main(){
+}
+
 void while_loop()
 {
     int counter = 0;
@@ -98,7 +112,4 @@ void functions()
     
     // return statements stop the function
     // return expr;
-}
-
-int main(){
 }
