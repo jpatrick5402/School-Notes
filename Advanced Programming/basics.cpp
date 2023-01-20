@@ -61,7 +61,7 @@ void converting_types()
     int b = static_cast<int>(f); // turns float f into an int b
 }
 
-void swtich_case()
+void Switch_case()
 {
     int num = 1;
     switch (num -1)
@@ -86,7 +86,7 @@ void do_while()
 
 void break_and_continue()
 {
-    //break; // breaks out of a loop or skip remainder of switch statemnets
+    //break; // breaks out of a loop or skip remainder of switch statements
     //continue; // skips code after it and starts next iteration of loop
 }
 
