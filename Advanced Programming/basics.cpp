@@ -18,17 +18,18 @@ void prototype_function()
     // main function will need to have variable declared before it runs
 }
 
-void proto_function(int num); //prototype function to prevent errors in main()
+void proto_function(int num); // prototype function to prevent errors in main()
 
-
-//main function is the entrypoint of the c++ program
-int main(){
+// main function is the entrypoint of the c++ program
+int main()
+{
 }
 
 void while_loop()
 {
     int counter = 0;
-    while (counter <= 10) {
+    while (counter <= 10)
+    {
         cout << "Hi";
         //"flag" - a true or false Loop Control Variable LCV
         //"sentinel" - a keyword or number LCV
@@ -44,7 +45,6 @@ void for_loop()
     {
         cout << i << endl;
     }
-    
 }
 
 void converting_types()
@@ -61,15 +61,15 @@ void converting_types()
     int b = static_cast<int>(f); // turns float f into an int b
 }
 
-void Switch_case()
+void switch_case()
 {
     int num = 1;
-    switch (num -1)
+    switch (num - 1)
     {
     case 0:
         /* code */
         break;
-    
+
     default:
         break;
     }
@@ -81,13 +81,12 @@ void do_while()
     {
         cout << "Hi";
     } while (true);
-    
 }
 
 void break_and_continue()
 {
-    //break; // breaks out of a loop or skip remainder of switch statements
-    //continue; // skips code after it and starts next iteration of loop
+    // break; // breaks out of a loop or skip remainder of switch statements
+    // continue; // skips code after it and starts next iteration of loop
 }
 
 void nested_structure()
@@ -103,13 +102,40 @@ void nested_structure()
 void functions()
 {
     // Value Returning VS Void functions
-    
+
     // return type | func name | type of param | param name
     // int example(int count){}
 
     // calling the function require that the return type is omitted
     // when calling a function, params' type is omitted as well
-    
+
     // return statements stop the function
     // return expr;
+
+    // to make an expression global:
+    // extern int w;
+
+    // A variable for which memory is allocated at block entry and
+    // deallocated at block exit is called an automatic variable. A
+    // variable for which memory remains allocated as long as the program
+    // executes is called a static variable. Global variables are static
+    // variables, and by default, variables declared within a block are automatic variables
+}
+
+void references()
+{
+    // a reference is an alternate name to an existing variable
+    int a = 3;
+    int &r = a;
+    // If a function needs to return more than one value, as a rule of
+    // good programming style, you should change it to a void function
+    // and use the appropriate reference parameters to return the values.
+}
+
+void pointers()
+{
+    // a pointer variable is stored in a random location, and the content of a pointer is the
+    // memory address of another variable.
+    int a = 3;   // creates var that contains 3
+    int *p = &a; // creates a var that points to the address of variable a
 }
