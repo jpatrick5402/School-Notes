@@ -49,10 +49,10 @@ void converting_types()
 
 void swtich_case()
 {
-    num = 1
-    switch (expression)
+    int num = 1;
+    switch (num -1)
     {
-    case /* constant-expression */:
+    case 0:
         /* code */
         break;
     
@@ -65,15 +65,15 @@ void do_while()
 {
     do
     {
-        /* code */
-    } while (/* condition */);
+        cout << "Hi";
+    } while (true);
     
 }
 
 void break_and_continue()
 {
-    break; // breaks out of a loop or skip remainder of switch statemnets
-    continue; // skips code after it and starts next iteration of loop
+    //break; // breaks out of a loop or skip remainder of switch statemnets
+    //continue; // skips code after it and starts next iteration of loop
 }
 
 void nested_structure()
