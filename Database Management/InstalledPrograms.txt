@@ -1,0 +1,2 @@
+Microsoft SQL server manager - https://www.microsoft.com/en-us/Download/details.aspx?id=101064
+Entity relationship assistant - http://highered.mheducation.com/sites/0072942207/student_view0/e_r_assistant.html
