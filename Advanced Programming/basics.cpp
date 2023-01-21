@@ -120,6 +120,8 @@ void functions()
     // variable for which memory remains allocated as long as the program
     // executes is called a static variable. Global variables are static
     // variables, and by default, variables declared within a block are automatic variables
+
+    // Default params are made by initializing and assigning a value in the function declaration.
 }
 
 void references()
@@ -138,4 +140,12 @@ void pointers()
     // memory address of another variable.
     int a = 3;   // creates var that contains 3
     int *p = &a; // creates a var that points to the address of variable a
+}
+
+int fact(int num) // This is a good example of recursion in C++. It is a tail recursion
+{
+    if (num == 0)
+        return 1;
+    else
+        return num * fact(num - 1)
 }
