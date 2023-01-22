@@ -138,8 +138,8 @@ double PaymentCalculator(double &Principle, double &Interest, int &Payments)
 
 void LoanAmortizaeSchedule(int Payment_num, int Total_pay_periods, double Pay_per_period, double Interest_rate, double Balance)
 {
-    float Interest_cost = Interest_rate * Balance;
-    float Principle = Pay_per_period - Interest_cost;
+    double Interest_cost = Interest_rate * Balance;
+    double Principle = Pay_per_period - Interest_cost;
 
     cout << setw(10) << right << fixed << setprecision(2) << Payment_num << setw(10) << Pay_per_period << setw(10) << Interest_cost << setw(10) << Principle << setw(10) << abs(round(((Balance - Principle) * 100)) / 100) << endl;
 
