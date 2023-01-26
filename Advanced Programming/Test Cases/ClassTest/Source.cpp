@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
+
 class carType
 {
 public:
     carType(string Make, string Model, int Miles);
-    int getMake();
+    string getMake();
     int getModel();
     int getMiles();
 
@@ -28,7 +29,10 @@ int carType::getMiles()
 
 int main()
 {
-    carType myCar("toyota", "tundra", 1200);
+    carType myCar("toyota", "tundra", 1200); // using a constructor to create myCar
 
-    cout << myCar.miles;
+    // cout << myCar.miles << endl;     // will not work because miles is private
+    cout << myCar.getMiles() << endl; // this works because getMake() is in the class scope
+    // now that there is myCar as an object, we can easily store manipulate/store this information
+    // into a database of other cars
 }
