@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3fae2416-ee4e-4b7b-8a8c-ad97fa612d96}</ProjectGuid>
-    <RootNamespace>Recursion</RootNamespace>
+    <ProjectGuid>{5462f6f8-648e-49f6-868f-12787efc761c}</ProjectGuid>
+    <RootNamespace>ClassCreationLab</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>RecursionLab</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\recursion.cpp" />
+    <ClInclude Include="Rectangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RectangleDriver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
