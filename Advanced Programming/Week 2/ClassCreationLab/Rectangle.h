@@ -1,3 +1,5 @@
+// Class declaration file
+
 #pragma once
 
 class Rectangle
@@ -11,4 +13,5 @@ public:
 		width = 0;
 		length = 0;
 	}
+	double calcPerimeter();
 };
