@@ -1,7 +1,8 @@
 // File that contains main()
-#include "Rectangle.cpp"
-
+#include "Rectangle.h"
+#include <iostream>
 int main()
 {
-	Rectangle myRectangle();
+	Rectangle myRectangle;
+	std::cout << myRectangle.getLength();
 }

@@ -1,6 +1,4 @@
 // Class declaration file
-#include <cmath>
-#pragma once
 
 class Rectangle
 {
@@ -9,15 +7,9 @@ class Rectangle
 
 public:
 	Rectangle();
-	double calcPerimeter() 
-	{
-		return ((2*width)+(2*length));
-	}
+	double calcPerimeter();
 	double calcArea();
-	double calcDiagonal()
-	{
-		return (sqrt(pow(width, 2) + pow(length, 2)));
-	}
+	double calcDiagonal();
 	void showData();
 	void setWidth(double Width);
 	double getWidth();

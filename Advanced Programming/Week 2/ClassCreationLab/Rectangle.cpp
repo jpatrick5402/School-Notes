@@ -2,6 +2,7 @@
 #include "Rectangle.h"
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 void Rectangle::setLength(double Length)
 {
@@ -42,4 +43,14 @@ Rectangle::Rectangle()
 {
 	width = 0;
 	length = 0;
+}
+
+double Rectangle::calcDiagonal()
+{
+	return (sqrt(pow(width, 2) + pow(length, 2)));
+}
+
+double Rectangle::calcPerimeter()
+{
+	return ((2 * width) + (2 * length));
 }
