@@ -3,27 +3,23 @@
 
 using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
-
 class Rectangle
 {
+    float width;
+    float length;
+
+public:
     Rectangle()
     {
         width = 0;
         length = 0;
     }
-    
-    float width;
-    float length;
-    
-    float calcPerimetr()
+
+    float calcPerimeter()
     {
         return ((2 * width) + (2 * length));
     }
-    float calcArea() 
+    float calcArea()
     {
         return (length * width);
     }
@@ -36,5 +32,4 @@ class Rectangle
     float getWidth();
     float setLength();
     float getLength();
-
 };
