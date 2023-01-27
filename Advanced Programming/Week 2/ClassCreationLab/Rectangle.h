@@ -26,8 +26,8 @@ public:
 		return (sqrt(pow(width, 2) + pow(length, 2)));
 	}
 	void showData();
-	void setWidth();
+	void setWidth(double Width);
 	double getWidth();
-	void setLength();
+	void setLength(double Length);
 	double getLength();
 };
