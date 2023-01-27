@@ -8,19 +8,12 @@ class Rectangle
 	double length;
 
 public:
-	
-	Rectangle() {
-		width = 0;
-		length = 0;
-	}
+	Rectangle();
 	double calcPerimeter() 
 	{
 		return ((2*width)+(2*length));
 	}
-	double calcArea()
-	{
-		return (length * width);
-	}
+	double calcArea();
 	double calcDiagonal()
 	{
 		return (sqrt(pow(width, 2) + pow(length, 2)));
