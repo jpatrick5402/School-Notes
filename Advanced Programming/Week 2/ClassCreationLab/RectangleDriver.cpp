@@ -1,8 +1,39 @@
 // File that contains main()
 #include "Rectangle.h"
 #include <iostream>
+using namespace std;
+
 int main()
 {
+	bool flag = true;
 	Rectangle myRectangle;
-	std::cout << myRectangle.getLength();
+	do
+	{
+		// Input & Set Width
+		double str;
+		cout << "Width of rectangle as a positive number (-1 to exit): ";
+		cin >> str;
+		if (str == -1)
+		{
+			cout << "terminating program as requested" << endl;
+			break;
+		}
+		else if (str <= 0)
+		{
+			cout << "incorrect width entered, terminating program" << endl;
+			break;
+		}
+		myRectangle.setWidth(str);
+		// Input & Set Length
+		cout << "Length of rectangle as a positive number: ";
+		cin >> str;
+		if (str <= 0)
+		{
+			cout << "incorrect length entered, terminating program" << endl;
+			break;
+		}
+		myRectangle.setLength(str);
+		// Show calculations
+		myRectangle.showData();
+	} while (flag);
 }

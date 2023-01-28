@@ -32,11 +32,12 @@ double Rectangle::calcArea()
 void Rectangle::showData()
 {
 	std::cout << std::endl;
-	std::cout << std::setw(11) << "Width: " << width << std::endl;
-	std::cout << std::setw(11) << "Length: " << length << std::endl;
+	std::cout << std::setw(11) << "Width: " << getWidth() << std::endl;
+	std::cout << std::setw(11) << "Length: " << getLength() << std::endl;
 	std::cout << std::setw(11) << "Diagonal: " << calcDiagonal() << std::endl;
 	std::cout << std::setw(11) << "Area: " << calcArea() << std::endl;
 	std::cout << std::setw(11) << "Perimeter: " << calcPerimeter() << std::endl;
+	std::cout << std::endl;
 }
 
 Rectangle::Rectangle()
