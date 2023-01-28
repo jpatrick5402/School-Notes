@@ -1,11 +1,14 @@
-// File that contains main()
+//RectangleDriver.cpp -- entry point for ClassCreationLab
+//CSIS 212-B01
+
 #include "Rectangle.h"
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	bool flag = true;
+	cout << "Joseph Patrick - Class Creation Assignment #2" << endl << endl;
 	Rectangle myRectangle;
 	do
 	{
@@ -20,7 +23,7 @@ int main()
 		}
 		else if (str <= 0)
 		{
-			cout << "incorrect width entered, terminating program" << endl;
+			cout << "incorrect width value entered, terminating program" << endl;
 			break;
 		}
 		myRectangle.setWidth(str);
@@ -29,11 +32,11 @@ int main()
 		cin >> str;
 		if (str <= 0)
 		{
-			cout << "incorrect length entered, terminating program" << endl;
+			cout << "incorrect length value entered, terminating program" << endl;
 			break;
 		}
 		myRectangle.setLength(str);
 		// Show calculations
 		myRectangle.showData();
-	} while (flag);
+	} while (true);
 }
