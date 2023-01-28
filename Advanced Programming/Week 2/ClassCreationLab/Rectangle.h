@@ -7,12 +7,12 @@ class Rectangle
 
 public:
 	Rectangle();
-	double calcPerimeter();
-	double calcArea();
-	double calcDiagonal();
-	void showData();
+	double calcPerimeter() const;
+	double calcArea() const;
+	double calcDiagonal() const;
+	void showData() const;
 	void setWidth(double Width);
-	double getWidth();
+	double getWidth() const;
 	void setLength(double Length);
-	double getLength();
+	double getLength() const;
 };

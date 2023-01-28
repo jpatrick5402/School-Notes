@@ -14,22 +14,22 @@ void Rectangle::setWidth(double Width)
 	width = Width;
 }
 
-double Rectangle::getLength()
+double Rectangle::getLength() const
 {
 	return length;
 }
 
-double Rectangle::getWidth()
+double Rectangle::getWidth() const
 {
 	return width;
 }
 
-double Rectangle::calcArea()
+double Rectangle::calcArea() const
 {
-	return (length * width);
+	return (getLength() * getWidth());
 }
 
-void Rectangle::showData()
+void Rectangle::showData() const
 {
 	std::cout << std::endl;
 	std::cout << std::setw(11) << "Width: " << getWidth() << std::endl;
@@ -46,12 +46,12 @@ Rectangle::Rectangle()
 	length = 0;
 }
 
-double Rectangle::calcDiagonal()
+double Rectangle::calcDiagonal() const
 {
-	return (sqrt(pow(width, 2) + pow(length, 2)));
+	return (sqrt(pow(getWidth(), 2) + pow(getLength(), 2)));
 }
 
-double Rectangle::calcPerimeter()
+double Rectangle::calcPerimeter() const
 {
-	return ((2 * width) + (2 * length));
+	return ((2 * getWidth()) + (2 * getLength()));
 }
