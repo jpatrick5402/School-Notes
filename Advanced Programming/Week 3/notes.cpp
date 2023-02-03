@@ -6,17 +6,20 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
 void testScore();
 void proccessingOneDimensionalArrays();
+void arrayTest();
+void arraysAsParameters(int listOne[], double listTwo[]);
 
 // Three data types: simple, structure, pointers
 
 int main()
 {
-	proccessingOneDimensionalArrays();
+	arrayTest();
 }
 
 void testScore() // this type program is very inneficient for large amounts of data
@@ -52,7 +55,39 @@ void ArrayIndexOutOfBounds()
 
 void ArrayInitializationDuringDeclaration()
 {
-	double slaes[5] = { 12.25, 32.50, 16.90, 23, 45.68 }; // Initialize array at declaration
-	double slaes[] = { 12.25, 32.50, 16.90, 23, 45.68 }; // Another way to initialize array at declaration
+	double sales[5] = { 12.25, 32.50, 16.90, 23, 45.68 }; // Initialize array at declaration
+	//double sales[] = { 12.25, 32.50, 16.90, 23, 45.68 }; // Another way to initialize array at declaration
 }
 
+void arrayTest()
+{
+	int list[4] = { 1,2,3,4 };
+	cout << list;
+}
+
+void arraysAsParameters(int listOne[],double listTwo[]);
+{
+}
+
+void enumerators()
+{
+	enum int{ RED, GREEN, BLUE };
+}
+
+void inputOptions()
+{
+	char name[25];
+	cin >> name; 
+	// or
+	cin.get(name, 25) // Allows for whitespace in the entry - C style string
+}
+
+void fileManip()
+{
+	ifstream infile;
+	string fileName;
+	cout << "Eenter the input file name: ";
+	cin >> fileName;
+
+	infile.open(fileName.c_str())
+}
