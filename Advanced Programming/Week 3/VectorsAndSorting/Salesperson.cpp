@@ -64,14 +64,33 @@ void Salesperson::setSalesGoal(int goal)
 		salesGoal = goal;
 	else
 	{
-		std::cout << "Unknown error with Sales Goal: " << std::endl;
+		std::cout << "Unknown error with Sales Goal" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
 		exit(-1);
 	}
 }
 void Salesperson::setCommissionPercentage(double commission)
 {
-	commissionPercentage = commission;
+	if (!commission)
+	{
+		std::cout << "Non-numeric value entered as Ccommission Percentage" << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
+	else if (commission < 0)
+	{
+		std::cout << "Negative number found as Commission Percentage" << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
+	else if (commission >= 0)
+		commissionPercentage = commission;
+	else
+	{
+		std::cout << "Unknown error with Commission Percentage" << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
 }
 
 // General Functions
@@ -93,7 +112,7 @@ void Salesperson::addSalesAmount(int ammount)
 		sales.push_back(ammount);
 	else
 	{
-		std::cout << "Unknown error with ammount: " << std::endl;
+		std::cout << "Unknown error with ammount" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
 		exit(-1);
 	}
