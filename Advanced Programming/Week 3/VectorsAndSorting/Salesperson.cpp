@@ -1,3 +1,5 @@
+// This is the implementation file for the Salesperson.h header
+
 #include "Salesperson.h"
 #include <vector>
 #include <iomanip>
@@ -19,7 +21,7 @@ Salesperson::Salesperson(std::string name, std::string dealer, int goal, double 
 	commissionPercentage = commission;
 }
 
-// Getter Functions
+// Getter Functions - each simply returns entered data
 std::string Salesperson::getSalespersonName()
 {
 	return salespersonName;
@@ -38,6 +40,7 @@ double Salesperson::getCommissionPercentage()
 }
 
 // Setter Functions
+// Since the salespersonName and dealershipName variables are strings, they simply assign the value
 void Salesperson::setSalespersonName(std::string name)
 {
 	salespersonName = name;
@@ -46,6 +49,13 @@ void Salesperson::setDealershipName(std::string dealer)
 {
 	dealershipName = dealer;
 }
+// The Sales Goal, Commission Percentage, and AddSale values need to be checked to ensure that they are accurate
+// All three follow the same basic format:
+// 
+// Check if it exists - this rules out Non-numric values
+// Check if it is negative - no negatives allowed
+// Check if it is positive - then set accordingly
+// Check if there was some other potential error
 void Salesperson::setSalesGoal(int goal)
 {
 	if (!goal)
@@ -127,6 +137,8 @@ void Salesperson::addSalesAmount(int ammount)
 	}
 }
 
+// To sort the sales ammounts, I used the insertion sort that we found in our book
+// I chose insertion over bubble sort because bubble sort requires further optimation to reduce iterations.
 void Salesperson::sortSalesAmount()
 {
 	int firstOutOfOrder, location;
@@ -150,6 +162,7 @@ void Salesperson::sortSalesAmount()
 	}
 }
 
+// Calculating sales average is double / int which returns a double
 double Salesperson::calcSalesAverage()
 {
 	return (calcTotalSales() / getNumberSales());
@@ -171,6 +184,8 @@ double Salesperson::getSmallestSale()
 	return currentSmallest;
 }
 
+// The getLargest and getSmallest use a sequential search, though it is slower for larger programs,
+// this does not have to sort the list in order to be used.
 double Salesperson::getLargestSale()
 {
 	int loc = 0;
@@ -189,9 +204,10 @@ double Salesperson::getLargestSale()
 
 int Salesperson::getNumberSales()
 {
-	return sales.size();
+	return sales.size(); // vector function
 }
 
+// Sequential add to return total
 double Salesperson::calcTotalSales()
 {
 	double total = 0;
@@ -202,11 +218,15 @@ double Salesperson::calcTotalSales()
 	return total;
 }
 
+// Commission Earned is double * double
+// Percentage needs to be converted first
 double Salesperson::calcCommissionEarned()
 {
 	return (calcTotalSales() * (getCommissionPercentage() / 100));
 }
 
+// Each item to display is separted and precise according to its value ie. commission percentage
+// I used a loop to loop through each item in sales
 void Salesperson::displaySalesInfo()
 {
 	const int LINE_SPACE = 26;

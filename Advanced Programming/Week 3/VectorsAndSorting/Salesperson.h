@@ -1,9 +1,12 @@
+// This is the header file for the Salesperson program
+
 #include <iostream>
 #include <vector>
 #include <string>
 
 class Salesperson
 {
+	// I chose to keep the data members private for security
 	// Data members
 	std::string salespersonName;
 	std::string dealershipName;
@@ -12,6 +15,7 @@ class Salesperson
 	std::vector<int> sales;
 
 public:
+	// All other members are public
 	// Contructors
 	Salesperson();
 	Salesperson(std::string name, std::string dealer, int goal, double commission);
