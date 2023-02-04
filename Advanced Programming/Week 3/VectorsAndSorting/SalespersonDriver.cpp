@@ -30,7 +30,6 @@ int main()
 	infile >> temp;
 	do
 	{
-		cout << temp;
 		MyPerson.addSalesAmount(temp);
 		infile >> temp;
 	} while (!infile.eof());
