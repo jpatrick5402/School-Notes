@@ -1,5 +1,6 @@
 #include "Salesperson.h"
 #include <vector>
+#include <iomanip>
 
 // Contructors
 Salesperson::Salesperson()
@@ -94,7 +95,7 @@ double Salesperson::getSmallestSale()
 	int loc = 0;
 	int currentSmallest = sales[loc];
 	int saleNumber = getNumberSales();
-	while (loc < saleNumber)
+	while (loc < saleNumber - 1)
 	{
 		if (sales[loc] > sales[loc + 1])
 			currentSmallest = sales[loc + 1];
@@ -110,7 +111,7 @@ double Salesperson::getLargestSale()
 	int loc = 0;
 	int currentLargest = sales[loc];
 	int saleNumber = getNumberSales();
-	while (loc < saleNumber)
+	while (loc < saleNumber - 1)
 	{
 		if (sales[loc] < sales[loc + 1])
 			currentLargest = sales[loc + 1];
@@ -129,7 +130,7 @@ int Salesperson::getNumberSales()
 double Salesperson::calcTotalSales()
 {
 	double total = 0;
-	for (int i : sales)
+	for (int i = 0; i < getNumberSales(); i++)
 	{
 		total = total + sales[i];
 	}
@@ -143,5 +144,33 @@ double Salesperson::calcCommissionEarned()
 
 void Salesperson::displaySalesInfo()
 {
+	const int LINE_SPACE = 26;
+	std::cout << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Delership: ";
+	std::cout << getDealershipName() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Salesperson: ";
+	std::cout << getSalespersonName() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Sales Goal: ";
+	std::cout << getSalesGoal() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Total Sales: ";
+	std::cout << calcTotalSales() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Number of Sales: ";
+	std::cout << getNumberSales() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Average Sale: ";
+	std::cout << calcSalesAverage() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Commission Prcentage: ";
+	std::cout << getCommissionPercentage() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Comission Earned: ";
+	std::cout << calcCommissionEarned() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Smallest Sale: ";
+	std::cout << getSmallestSale() << '\n';
+	std::cout << std::setw(LINE_SPACE) << "Largest Sale: ";
+	std::cout << getLargestSale() << '\n';
 
+	std::cout << std::setw(LINE_SPACE) << "List of Sales (sorted): " << '\n';
+	sortSalesAmount();
+	for (int i : sales)
+	{
+		std::cout << std::setw(LINE_SPACE) << i << '\n';
+	}
 }
