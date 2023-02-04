@@ -21,7 +21,8 @@ int main()
 	if (!infile.is_open())
 	{
 		cout << "File not found" << '\n';
-		return -1;
+		system("pause");
+		exit(-1);
 	}
 	infile.getline(name,256);
 	MyPerson.setSalespersonName(name);

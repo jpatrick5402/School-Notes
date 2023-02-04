@@ -52,12 +52,14 @@ void Salesperson::setSalesGoal(int goal)
 	{
 		std::cout << "Non-numeric value entered as a Sales Goal" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 	else if (goal < 0)
 	{
 		std::cout << "Negative number found as Sales Goal" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 	else if (goal >= 0)
@@ -66,6 +68,7 @@ void Salesperson::setSalesGoal(int goal)
 	{
 		std::cout << "Unknown error with Sales Goal" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 }
@@ -75,12 +78,14 @@ void Salesperson::setCommissionPercentage(double commission)
 	{
 		std::cout << "Non-numeric value entered as Ccommission Percentage" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 	else if (commission < 0)
 	{
 		std::cout << "Negative number found as Commission Percentage" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 	else if (commission >= 0)
@@ -89,6 +94,7 @@ void Salesperson::setCommissionPercentage(double commission)
 	{
 		std::cout << "Unknown error with Commission Percentage" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 }
@@ -100,20 +106,23 @@ void Salesperson::addSalesAmount(int ammount)
 	{
 		std::cout << "Non-numeric value entered as a sale" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 	else if (ammount < 0)
 	{
-		std::cout << "Negative number found in file" << std::endl;
+		std::cout << "Negative number found as a sale" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 	else if ( ammount >= 0)
 		sales.push_back(ammount);
 	else
 	{
-		std::cout << "Unknown error with ammount" << std::endl;
+		std::cout << "Unknown error with sale ammount" << std::endl;
 		std::cout << "Terminating Program" << std::endl;
+		system("pause");
 		exit(-1);
 	}
 }
