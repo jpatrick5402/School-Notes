@@ -48,7 +48,26 @@ void Salesperson::setDealershipName(std::string dealer)
 }
 void Salesperson::setSalesGoal(int goal)
 {
-	salesGoal = goal;
+	if (!goal)
+	{
+		std::cout << "Non-numeric value entered as a Sales Goal" << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
+	else if (goal < 0)
+	{
+		std::cout << "Negative number found as Sales Goal" << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
+	else if (goal >= 0)
+		salesGoal = goal;
+	else
+	{
+		std::cout << "Unknown error with Sales Goal: " << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
 }
 void Salesperson::setCommissionPercentage(double commission)
 {
@@ -58,8 +77,26 @@ void Salesperson::setCommissionPercentage(double commission)
 // General Functions
 void Salesperson::addSalesAmount(int ammount)
 {
-	if ( ammount >= 0)
+	if (!ammount)
+	{
+		std::cout << "Non-numeric value entered as a sale" << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
+	else if (ammount < 0)
+	{
+		std::cout << "Negative number found in file" << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
+	else if ( ammount >= 0)
 		sales.push_back(ammount);
+	else
+	{
+		std::cout << "Unknown error with ammount: " << std::endl;
+		std::cout << "Terminating Program" << std::endl;
+		exit(-1);
+	}
 }
 
 void Salesperson::sortSalesAmount()
