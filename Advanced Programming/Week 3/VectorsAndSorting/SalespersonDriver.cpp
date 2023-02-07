@@ -1,10 +1,12 @@
+#include "Salesperson.h"
 #include <iostream>
 #include <fstream>
-#include "Salesperson.h"
 using namespace std;
 // G:\My Drive\!Projects\School-Notes\Advanced Programming\Week 3\VectorsAndSorting\File.txt
 int main()
 {
+	cout << "Joseph Patrick - Vecotr and Sorting Assignment #3" << endl << endl;
+
 	char fileName[256];
 	char name[256];
 	char dealer[256];
@@ -15,6 +17,7 @@ int main()
 	Salesperson MyPerson;
 	cout << "Enter the name of the file: ";
 	cin.getline(fileName, 256);
+
 
 	ifstream infile;
 	infile.open(fileName);

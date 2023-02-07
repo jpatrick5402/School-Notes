@@ -1,0 +1,12 @@
+Dear Professor Williams,
+
+This is the submission that I would like to be graded per your email:
+
+"""
+Joseph, 
+
+This one compiled on my computer. Submit it and add a note to remind me this is an approved submission with no late points deducted.
+"""
+
+Thank You,
+Joseph

@@ -1,9 +1,7 @@
 // This is the implementation file for the Salesperson.h header
 
 #include "Salesperson.h"
-#include <vector>
 #include <iomanip>
-
 // Contructors
 Salesperson::Salesperson()
 {
