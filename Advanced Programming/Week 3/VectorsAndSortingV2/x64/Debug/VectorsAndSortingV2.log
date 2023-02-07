@@ -1,5 +1,0 @@
-﻿  Salesperson.cpp
-C:\Users\Joseph Patrick\Desktop\VectorsAndSortingV2\Salesperson.cpp(205,21): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  Salespersondriver.cpp
-  Generating Code...
-  VectorsAndSortingV2.vcxproj -> C:\Users\Joseph Patrick\Desktop\VectorsAndSortingV2\x64\Debug\VectorsAndSortingV2.exe
