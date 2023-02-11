@@ -1,11 +1,14 @@
+#pragma once
 #include <string>
 #include <vector>
+#include "Student.h"
 
 class ClassSection
 {
 	std::string className;
 	std::string sectionName;
 	int sectionCapacity;
+	std::vector<Student> students;
 
 public:
 

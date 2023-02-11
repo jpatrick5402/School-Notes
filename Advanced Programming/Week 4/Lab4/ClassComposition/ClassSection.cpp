@@ -53,11 +53,15 @@ void ClassSection::addStudent()
 	int TotalPoints;
 
 	std::cout << "Enter Student Name: ";
-	std::cin.getline(StuName, 256);
+	std::cin >> StuName;
 	std::cout << "Enter Student Birth Year: ";
 	std::cin >> YearOfBirth;
 	std::cout << "Enter Total Student Points: ";
 	std::cin >> TotalPoints;
+
+	Student MyStudent(StuName, YearOfBirth, TotalPoints);
+
+	students.push_back(MyStudent);
 }
 
 void ClassSection::listStudents()

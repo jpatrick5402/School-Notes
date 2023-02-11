@@ -14,18 +14,19 @@ int main()
 	char SecName[256];
 	int SecCap;
 	char input;
+	bool flag = true;
 
-	while (true)
+	cout << "Enter Class Name: ";
+	cin.getline(ClassName, 256);
+	cout << "Enter Section Name: ";
+	cin.getline(SecName, 256);
+	cout << "Enter Section Capacity: ";
+	cin >> SecCap;
+
+	ClassSection MyClassSection(ClassName, SecName, SecCap);
+	
+	while (flag)
 	{
-		cout << "Enter Class Name: ";
-		cin.getline(ClassName, 256);
-		cout << "Enter Section Name: ";
-		cin.getline(SecName, 256);
-		cout << "Enter Section Capacity: ";
-		cin >> SecCap;
-
-		ClassSection MyClassSection(ClassName, SecName, SecCap);
-
 		cout << "Main Menu" << '\n' << '\n';
 		cout << "A - Add a new student" << '\n' << '\n';
 		cout << "L - List Students" << '\n' << '\n';
@@ -43,10 +44,9 @@ int main()
 			MyClassSection.listStudents();
 		case('Q'):
 		case('q'):
-			exit(-1);
+			flag = false;
 		default:
 			cout << "Unknown input" << endl;
 		}
-		cout << "ended";
 	}
 }
