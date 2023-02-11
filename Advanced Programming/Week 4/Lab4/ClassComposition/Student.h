@@ -9,13 +9,13 @@ class Student
 public:
 
 	Student();
-	Student(std::string ClassName, std::string SectionName, int NumStudents);
+	Student(std::string StudentName, int YearOfBirth, int PointsEarned);
 
-	void setStudentName();
+	void setStudentName(std::string StudentName);
 	std::string getStudentName();
-	void setBirthYear();
+	void setBirthYear(int YearOfBirth);
 	int getBirthYear();
-	void setPointsEarned();
+	void setPointsEarned(int PointsEarned);
 	int getPointsEarned();
 	char calcLetterGrade();
 	void listStudentInfo();

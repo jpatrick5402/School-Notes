@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 class ClassSection
 {
@@ -9,13 +10,13 @@ class ClassSection
 public:
 
 	ClassSection();
-	ClassSection(std::string StudentName, std::string YearOfBirth, int PointsEarned);
+	ClassSection(std::string ClassName, std::string SectionName, int NumStudents);
 
-	void setClassName();
+	void setClassName(std::string ClassName);
 	std::string getClassName();
-	void setSectionName();
+	void setSectionName(std::string SectionName);
 	std::string getSectionName();
-	void setSectionCapacity();
+	void setSectionCapacity(int NumStudents);
 	int getSectionCapacity();
 	void addStudent();
 	void listStudents();
