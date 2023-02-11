@@ -52,14 +52,13 @@ void ClassSection::addStudent()
 	char StuName[256];
 	int YearOfBirth;
 	int TotalPoints;
-
 	std::cout << "Enter Student Name: ";
-	std::cin >> StuName;
+	std::cin.getline(StuName, 256);
 	std::cout << "Enter Student Birth Year: ";
 	std::cin >> YearOfBirth;
 	std::cout << "Enter Total Student Points: ";
 	std::cin >> TotalPoints;
-
+	std::cin.ignore();
 	Student MyStudent(StuName, YearOfBirth, TotalPoints);
 
 	students.push_back(MyStudent);
@@ -91,4 +90,5 @@ void ClassSection::listStudents()
 	{
 		i.listStudentInfo();
 	}
+	system("pause");
 }

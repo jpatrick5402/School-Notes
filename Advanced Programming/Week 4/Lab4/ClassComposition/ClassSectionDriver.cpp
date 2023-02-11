@@ -8,7 +8,8 @@ using namespace std;
 
 int main()
 {
-	cout << "Joseph Patrick - Lab 4" << endl << endl;
+	cout << "Joseph Patrick - Lab 4" << endl;
+	cout << "Class Section - Student/Grades" << endl << endl;
 
 	char ClassName[256];
 	char SecName[256];
@@ -23,6 +24,7 @@ int main()
 	cout << "Enter Section Capacity: ";
 	cin >> SecCap;
 	cout << '\n';
+	std::cin.ignore();
 
 	ClassSection MyClassSection(ClassName, SecName, SecCap);
 	
@@ -35,7 +37,8 @@ int main()
 		cout << "Selection: ";
 		cin.clear();
 		cin >> input;
-		
+		std::cin.ignore();
+
 		switch(input)
 		{
 		case('A'):
