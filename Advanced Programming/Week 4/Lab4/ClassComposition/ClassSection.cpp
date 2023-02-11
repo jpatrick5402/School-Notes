@@ -1,6 +1,7 @@
 #include "ClassSection.h"
 
 #include <iostream>
+#include <iomanip>
 
 ClassSection::ClassSection()
 {
@@ -66,5 +67,28 @@ void ClassSection::addStudent()
 
 void ClassSection::listStudents()
 {
+	int dispWidth = 20;
+	std::cout << "Class Report with Students" << '\n';
+	std::cout << "==========================" << '\n' << '\n';
 
+	std::cout << std::setw(dispWidth) << "Class Name:" << getClassName() << '\n';
+	std::cout << std::setw(dispWidth) << "Section Name:" << getSectionName() << '\n';
+	std::cout << std::setw(dispWidth) << "Section Capacity:" << getSectionCapacity() << '\n';
+	std::cout << std::setw(dispWidth) << "Students Enrolled:" << students.size() << '\n' << '\n';
+
+	std::cout << "Students in Class/Section" << '\n';
+	std::cout << "-------------------------" << '\n';
+
+	dispWidth = 15;
+	std::cout << std::right << std::setw(dispWidth) << "Student's Name";
+	std::cout << std::right << std::setw(dispWidth) << "Birth Year";
+	std::cout << std::right << std::setw(dispWidth) << "Points Earned";
+	std::cout << std::right << std::setw(dispWidth) << "Letter Grade";
+	std::cout << std::endl;
+	std::cout << "------------------------------------------------------------" << std::endl;
+
+	for (Student i : students)
+	{
+		i.listStudentInfo();
+	}
 }

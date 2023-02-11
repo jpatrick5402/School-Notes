@@ -22,6 +22,7 @@ int main()
 	cin.getline(SecName, 256);
 	cout << "Enter Section Capacity: ";
 	cin >> SecCap;
+	cout << '\n';
 
 	ClassSection MyClassSection(ClassName, SecName, SecCap);
 	
@@ -32,6 +33,7 @@ int main()
 		cout << "L - List Students" << '\n' << '\n';
 		cout << "Q - Quit" << '\n' << '\n';
 		cout << "Selection: ";
+		cin.clear();
 		cin >> input;
 		
 		switch(input)
@@ -39,14 +41,16 @@ int main()
 		case('A'):
 		case('a'):
 			MyClassSection.addStudent();
+			break;
 		case('L'):
 		case('l'):
 			MyClassSection.listStudents();
+			break;
 		case('Q'):
 		case('q'):
 			flag = false;
-		default:
-			cout << "Unknown input" << endl;
+			break;
 		}
+		cout << '\n';
 	}
 }
