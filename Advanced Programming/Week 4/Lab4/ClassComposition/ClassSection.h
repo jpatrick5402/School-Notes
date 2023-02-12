@@ -14,6 +14,7 @@ public:
 
 	ClassSection();
 	ClassSection(std::string ClassName, std::string SectionName, int NumStudents);
+	~ClassSection();
 
 	void setClassName(std::string ClassName);
 	std::string getClassName();
@@ -23,4 +24,5 @@ public:
 	int getSectionCapacity();
 	void addStudent();
 	void listStudents();
+	int getClassSize();
 };

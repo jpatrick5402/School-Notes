@@ -12,9 +12,22 @@ ClassSection::ClassSection()
 
 ClassSection::ClassSection(std::string ClassName, std::string SectionName, int NumStudents)
 {
+	while (NumStudents <= 0)
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Invalid Section Capacity" << '\n';
+		std::cout << "Enter Section Capacity: ";
+		std::cin >> NumStudents;
+	}
+
 	className = ClassName;
 	sectionName = SectionName;
 	sectionCapacity = NumStudents;
+}
+
+ClassSection::~ClassSection()
+{
 }
 
 void ClassSection::setClassName(std::string ClassName)
@@ -52,13 +65,44 @@ void ClassSection::addStudent()
 	char StuName[256];
 	int YearOfBirth;
 	int TotalPoints;
+
+	std::cin.clear();
+	std::cin.ignore();
+
 	std::cout << "Enter Student Name: ";
 	std::cin.getline(StuName, 256);
+
+	while (StuName == "")
+	{
+		std::cout << "Please enter a student name" << '\n';
+		std::cout << "Enter Student Name: ";
+		std::cin.getline(StuName, 256);
+	}
+
 	std::cout << "Enter Student Birth Year: ";
 	std::cin >> YearOfBirth;
+
+	while (std::to_string(YearOfBirth).length() != 4 || std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Invalid Year entered" << '\n';
+		std::cout << "Enter Student Birth Year: ";
+		std::cin >> YearOfBirth;
+	}
+
 	std::cout << "Enter Total Student Points: ";
 	std::cin >> TotalPoints;
-	std::cin.ignore();
+	
+	while (!TotalPoints || std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Invalid Total Points entered" << '\n';
+		std::cout << "Enter Total Student Points: ";
+		std::cin >> TotalPoints;
+	}
+	
 	Student MyStudent(StuName, YearOfBirth, TotalPoints);
 
 	students.push_back(MyStudent);
@@ -91,4 +135,9 @@ void ClassSection::listStudents()
 		i.listStudentInfo();
 	}
 	system("pause");
+}
+
+int ClassSection::getClassSize()
+{
+	return students.size();
 }

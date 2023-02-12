@@ -37,13 +37,18 @@ int main()
 		cout << "Selection: ";
 		cin.clear();
 		cin >> input;
-		std::cin.ignore();
 
 		switch(input)
 		{
 		case('A'):
 		case('a'):
-			MyClassSection.addStudent();
+			if (MyClassSection.getClassSize() < MyClassSection.getSectionCapacity())
+				MyClassSection.addStudent();
+			else
+			{
+				cout << "Class is full" << endl;
+				system("pause");
+			}
 			break;
 		case('L'):
 		case('l'):
@@ -53,6 +58,8 @@ int main()
 		case('q'):
 			flag = false;
 			break;
+		default:
+			cout << "Invalid Option, Try again" << endl;
 		}
 		cout << '\n';
 	}

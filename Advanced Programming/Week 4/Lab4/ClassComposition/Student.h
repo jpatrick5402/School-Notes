@@ -11,6 +11,7 @@ public:
 
 	Student();
 	Student(std::string StudentName, int YearOfBirth, int PointsEarned);
+	~Student();
 
 	void setStudentName(std::string StudentName);
 	std::string getStudentName();

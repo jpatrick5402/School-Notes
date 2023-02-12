@@ -16,6 +16,10 @@ Student::Student(std::string StudentName, int YearOfBirth, int PointsEarned)
 	pointsEarned = PointsEarned;
 }
 
+Student::~Student()
+{
+}
+
 void Student::setStudentName(std::string StudentName)
 {
 	studentName = StudentName;
