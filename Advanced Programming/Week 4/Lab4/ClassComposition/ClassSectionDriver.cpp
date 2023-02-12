@@ -21,10 +21,9 @@ int main()
 	cin.getline(ClassName, 256);
 	cout << "Enter Section Name: ";
 	cin.getline(SecName, 256);
-	cout << "Enter Section Capacity: ";
+	cout << "Enter Section Capacity (2-10): ";
 	cin >> SecCap;
 	cout << '\n';
-	std::cin.ignore();
 
 	ClassSection MyClassSection(ClassName, SecName, SecCap);
 	
@@ -46,7 +45,7 @@ int main()
 				MyClassSection.addStudent();
 			else
 			{
-				cout << "Class is full" << endl;
+				cout << "The seection has the maximum number of students" << endl;
 				system("pause");
 			}
 			break;
@@ -61,6 +60,5 @@ int main()
 		default:
 			cout << "Invalid Option, Try again" << endl;
 		}
-		cout << '\n';
 	}
 }

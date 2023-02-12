@@ -4,13 +4,40 @@
 
 Student::Student()
 {
-	studentName = "";
+	studentName = "";		
 	birthYear = 0;
 	pointsEarned = 0;
 }
 
 Student::Student(std::string StudentName, int YearOfBirth, int PointsEarned)
 {
+	while (StudentName == "")
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Please enter a student name" << '\n';
+		std::cout << "Enter Student Name: ";
+		std::getline(std::cin,StudentName);
+	}
+
+	while (std::to_string(YearOfBirth).length() != 4 || std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Invalid Year entered" << '\n';
+		std::cout << "Enter Student Birth Year: ";
+		std::cin >> YearOfBirth;
+	}
+
+	while (!PointsEarned || PointsEarned < 0 || PointsEarned > 1010 || std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Invalid Total Points entered" << '\n';
+		std::cout << "Enter Total Student Points: ";
+		std::cin >> PointsEarned;
+	}
+
 	studentName = StudentName;
 	birthYear = YearOfBirth;
 	pointsEarned = PointsEarned;

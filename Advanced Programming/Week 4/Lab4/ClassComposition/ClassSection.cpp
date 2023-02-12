@@ -12,11 +12,40 @@ ClassSection::ClassSection()
 
 ClassSection::ClassSection(std::string ClassName, std::string SectionName, int NumStudents)
 {
-	while (NumStudents <= 0)
+	while (ClassName == "" || std::cin.fail())
 	{
 		std::cin.clear();
 		std::cin.ignore();
-		std::cout << "Invalid Section Capacity" << '\n';
+		std::cout << "Class Name cannot be blank" << '\n';
+		std::cout << "Enter Class Name: ";
+		std::getline(std::cin, ClassName);
+	}
+
+	while (SectionName == "" || std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Section Name cannot be blank" << '\n';
+		std::cout << "Enter Section Name: ";
+		std::getline(std::cin, SectionName);
+	}
+
+	while (NumStudents < 2 || NumStudents > 10 || std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+		if (NumStudents < 2)
+		{
+			std::cout << "Section Capacity must be 2 or greater" << '\n';
+		}
+		else if (NumStudents > 10)
+		{
+			std::cout << "Section Capacity must be 10 or less" << '\n';
+		}
+		else
+		{
+			std::cout << "Section Capacity must be a number" << '\n';
+		}
 		std::cout << "Enter Section Capacity: ";
 		std::cin >> NumStudents;
 	}
@@ -72,36 +101,11 @@ void ClassSection::addStudent()
 	std::cout << "Enter Student Name: ";
 	std::cin.getline(StuName, 256);
 
-	while (StuName == "")
-	{
-		std::cout << "Please enter a student name" << '\n';
-		std::cout << "Enter Student Name: ";
-		std::cin.getline(StuName, 256);
-	}
-
 	std::cout << "Enter Student Birth Year: ";
 	std::cin >> YearOfBirth;
 
-	while (std::to_string(YearOfBirth).length() != 4 || std::cin.fail())
-	{
-		std::cin.clear();
-		std::cin.ignore();
-		std::cout << "Invalid Year entered" << '\n';
-		std::cout << "Enter Student Birth Year: ";
-		std::cin >> YearOfBirth;
-	}
-
 	std::cout << "Enter Total Student Points: ";
 	std::cin >> TotalPoints;
-	
-	while (!TotalPoints || std::cin.fail())
-	{
-		std::cin.clear();
-		std::cin.ignore();
-		std::cout << "Invalid Total Points entered" << '\n';
-		std::cout << "Enter Total Student Points: ";
-		std::cin >> TotalPoints;
-	}
 	
 	Student MyStudent(StuName, YearOfBirth, TotalPoints);
 
@@ -114,10 +118,10 @@ void ClassSection::listStudents()
 	std::cout << "Class Report with Students" << '\n';
 	std::cout << "==========================" << '\n' << '\n';
 
-	std::cout << std::setw(dispWidth) << "Class Name:" << getClassName() << '\n';
-	std::cout << std::setw(dispWidth) << "Section Name:" << getSectionName() << '\n';
-	std::cout << std::setw(dispWidth) << "Section Capacity:" << getSectionCapacity() << '\n';
-	std::cout << std::setw(dispWidth) << "Students Enrolled:" << students.size() << '\n' << '\n';
+	std::cout << std::setw(dispWidth) << "Class Name: " << getClassName() << '\n';
+	std::cout << std::setw(dispWidth) << "Section Name: " << getSectionName() << '\n';
+	std::cout << std::setw(dispWidth) << "Section Capacity: " << getSectionCapacity() << '\n';
+	std::cout << std::setw(dispWidth) << "Students Enrolled: " << students.size() << '\n' << '\n';
 
 	std::cout << "Students in Class/Section" << '\n';
 	std::cout << "-------------------------" << '\n';
