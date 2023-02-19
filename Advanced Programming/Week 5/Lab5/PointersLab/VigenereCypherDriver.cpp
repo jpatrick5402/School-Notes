@@ -10,6 +10,7 @@ int displayMenu();
 
 int main()
 {
+	std::cout << "Joseph Patrick - Lab 5" << endl;
 	while (true)
 	{
 		int choice = displayMenu();
@@ -36,9 +37,12 @@ int main()
 
 			while (!infile.is_open())
 			{
+				cin.ignore();
+				cin.clear();
 				cout << "File not found" << '\n';
 				cout << "Enter the name of the file to encrypt: ";
 				cin >> path;
+				infile.open(path);
 			}
 
 			while (!infile.eof())
@@ -48,7 +52,7 @@ int main()
 				strncat_s(file_contents, str, 256);
 			}
 
-			cout << '\n' << file_contents << '\n';
+			cout << '\n' << file_contents << '\n' << '\n';
 
 			MyText MyTextObject(file_contents);
 
@@ -72,6 +76,8 @@ int main()
 					token2 = strtok_s(NULL, seps, &next_token2);
 				}
 			}
+		MyTextObject.DisplayText();
+		MyTextObject.FileCreate("Encrypted.txt");
 		infile.close();
 		}
 		else if (choice == 2)
@@ -88,7 +94,7 @@ int main()
 			char* next_token2 = NULL;
 			string path;
 			
-			cout << "Enter the name of the file to encrypt: ";
+			cout << "Enter the name of the file to decrypt: ";
 			cin >> path;
 
 			ifstream infile;
@@ -96,8 +102,10 @@ int main()
 
 			while (!infile.is_open())
 			{
+				cin.ignore();
+				cin.clear();
 				cout << "File not found" << '\n';
-				cout << "Enter the name of the file to encrypt: ";
+				cout << "Enter the name of the file to decrypt: ";
 				cin >> path;
 			}
 
@@ -108,7 +116,7 @@ int main()
 				strncat_s(file_contents, str, 256);
 			}
 
-			cout << '\n' << file_contents << '\n';
+			cout << '\n' << file_contents << '\n' << '\n';
 
 			MyText MyTextObject(file_contents);
 
@@ -132,6 +140,8 @@ int main()
 					token2 = strtok_s(NULL, seps, &next_token2);
 				}
 			}
+		MyTextObject.DisplayText();
+		MyTextObject.FileCreate("Decrypted.txt");
 		infile.close();
 		}
 		else if (choice == 3)
@@ -143,17 +153,19 @@ int main()
 
 int displayMenu()
 {
-	int selection;
+	string selection;
+	cout << '\n';
 	cout << "Vigenere Cypher" << '\n' << '\n';
 	cout << "Main Menu" << '\n' << '\n';
 	cout << "1 - Encrypt File" << '\n';
 	cout << "2 - Decrypt File" << '\n';
 	cout << "3 - Quit" << '\n';
-	cout << '\n' << '\n' << '\n';
+	cout << '\n' << '\n';
 	cout << "Selection: ";
 	
 	cin >> selection;
-	while (cin.fail() || selection != 1 && selection != 2 && selection != 3)
+
+	while (selection != "1" && selection != "2" && selection != "3")
 	{
 		cin.ignore();
 		cin.clear();
@@ -161,5 +173,12 @@ int displayMenu()
 		cout << "Selection: ";
 		cin >> selection;
 	}
-	return selection;
+	if (selection == "1")
+		return 1;
+	else if (selection == "2")
+		return 2;
+	else if (selection == "3")
+		return 3;
+
+	return -1;
 }

@@ -2,7 +2,7 @@
 
 Vigenere::Vigenere()
 {
-
+	// This is the default constructor that is used in the MyText class for Vigenere v
 }
 
 Vigenere::Vigenere(std::string k)
