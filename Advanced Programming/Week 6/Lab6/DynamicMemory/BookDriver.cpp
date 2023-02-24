@@ -43,7 +43,7 @@ int main()
 	// Creating dynamic list of Books
 	// https://learn.microsoft.com/en-us/cpp/cpp/new-and-delete-operators?view=msvc-170
 
-	Book** bookList = new Book * [bookNum];
+	Book** bookList = new Book * [bookNum]; // Pointer to pointer array
 
 	for (int i = 0; i < bookNum; i++) // Loopring to get info for books
 	{
@@ -56,7 +56,7 @@ int main()
 
 		score = generateScore(i);
 
-		Book* p = new Book();
+		Book* p = new Book(); // pointer to Book
 
 		// I used the "->" from the Lab 6 Demo
 		p->setTitle(bookName);
@@ -79,6 +79,8 @@ int main()
 		cout << '\n';
 	}
 
+	system("pause");
+
 	// From instructions
 	for (int i = 0; i < bookNum; i++)
 	{
@@ -86,13 +88,11 @@ int main()
 		bookList[i] = NULL;
 	}
 	delete[] bookList;
-
-	system("pause");
 }
 
-int generateScore(int position)
+int generateScore(int position) // returns a random score based on position
 {
-	srand(100 + position);
-	int num = rand() % 5;
-	return num + 1;
+	srand(100 + position); // wouldn't return a new number if position wasn't used
+	int num = rand() % 4; // this will generate 0-4
+	return num + 1; // this will return 1-5
 }
